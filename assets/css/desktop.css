@@ -1,0 +1,89 @@
+/* Desktop styles */
+.close-btn,
+.menu-btn{
+    display: none;
+}
+
+.navbar ul{
+    display: flex;
+}
+
+nav{
+    padding: 1.5rem 3rem;
+}
+
+.navbar{
+    align-self: center;
+}
+
+.navbar a{
+    color: white;
+    padding: .5rem;
+    position: relative;
+}
+
+.navbar li{
+    text-align: center;
+}
+
+.navbar a.onscroll{
+    color: royalblue;
+}
+
+#name h1{
+    font-size: 3rem;
+}
+
+.navbar a::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: .1rem;
+    bottom: 0;
+    background: whitesmoke; 
+    transition: .5s; 
+}
+
+.navbar a:hover::before{
+    width: 100%;
+}
+
+a.onscroll:after,
+li.onscroll:after{
+    background: radial-gradient(circle, royalblue 10%, transparent 10%);
+}
+#contact{
+    margin: 5rem;
+}
+#contact form{
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+}
+#contact .input input{
+    width: 20rem;
+}
+
+main .messanger button{
+    background: whitesmoke;
+    border-radius: 50%;
+    margin: .5rem;
+}
+main .messanger .bottom input{
+    width: 100%;
+}
+main .messanger .logo{
+    padding: 2.5rem;
+}
+
+main .messanger .bottom{
+    bottom: 6rem;
+}
+main .messanger .bottom .left{
+    display: flex;
+    width: 15rem;
+    overflow: hidden;
+}
+
+main .messanger .msg-panel{
+    height: 74%;
+}

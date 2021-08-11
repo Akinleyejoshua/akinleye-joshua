@@ -1,0 +1,959 @@
+/* General styles */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+h2,
+h4 {
+    color: royalblue;
+    position: relative;
+    display: inline-flex;
+
+}
+
+h2 {
+    padding: 0 .5rem;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+    /* margin: 1rem; */
+}
+
+h2:after {
+    content: "";
+    width: 3rem;
+    height: .1rem;
+    background: royalblue;
+    position: absolute;
+    top: 15px;
+    margin: 0 100%;
+    border-radius: 10rem;
+    right: 0;
+}
+
+h2::before {
+    content: "";
+    width: 3rem;
+    height: .1rem;
+    background: royalblue;
+    top: 15px;
+    position: absolute;
+    border-radius: 10rem;
+    margin: 0 100%;
+    left: 0;
+}
+
+/* Ripple effect */
+a,
+button,
+li,
+span {
+    position: relative;
+    overflow: hidden;
+}
+
+a:after,
+button:after,
+li:after,
+span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10%);
+    background-repeat: no-repeat;
+    transform: scale(15);
+    opacity: 0;
+    transition: transform .5s, opacity .5s;
+    background-position: 50%;
+    pointer-events: none;
+}
+
+a:active:after,
+button:active:after,
+li:active:after,
+span:active:after {
+    transform: scale(0);
+    opacity: .59;
+    transition: 0s;
+}
+
+main button.onscroll:after,
+main span.onscroll:after,
+main a.onscroll:after,
+main li.onscroll:after {
+    background: radial-gradient(circle, royalblue 10%, transparent 10%);
+}
+
+
+/* universal styles */
+button {
+    border: none;
+    padding: .5rem;
+}
+
+li {
+    padding: .5rem;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.card {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+
+.card-header {
+    background: royalblue;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-family: monospace;
+}
+
+.card-body {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card-footer {
+    text-align: center;
+    padding: 1rem;
+}
+
+.card-footer a {
+    font-size: 1.5rem;
+    color: royalblue;
+}
+
+.badge {
+    display: flex;
+    justify-content: center;
+}
+
+.badge img {
+    height: 3rem;
+    max-width: 3rem;
+    margin: .5rem;
+}
+
+/* header section */
+header {
+    position: relative;
+}
+
+header * {
+    transition: .5s;
+
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    background: inherit;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+
+nav .menu-btn {
+    align-self: center;
+    width: 3rem;
+    height: 100%;
+}
+
+.menu-btn .bar {
+    background: white;
+    height: .2rem;
+    width: 100%;
+    margin: .3rem;
+    border-radius: 100rem;
+}
+
+.bar:nth-child(2) {
+    width: 40%;
+}
+
+.bar:nth-child(3) {
+    width: 30%;
+}
+
+nav .nav-brand {
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+.nav-brand a {
+    color: white;
+    font-weight: bolder;
+    font-family: monospace;
+}
+
+nav .header-right {
+    align-self: center;
+}
+
+.header-right button {
+    border: 2px solid white;
+    color: white;
+    background: inherit;
+    border-radius: 5rem;
+}
+
+.menu-btn,
+.nav-brand,
+.header-right {
+    padding: .5rem;
+}
+
+/* window on scroll */
+nav.onscroll {
+    background: white;
+    position: fixed;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand a.onscroll {
+    color: royalblue;
+}
+
+.menu-btn div.onscroll {
+    background: linear-gradient(to right, lightblue, royalblue);
+}
+
+.header-right button.onscroll {
+    border: royalblue 2px solid;
+    color: royalblue;
+}
+
+.header-right i.onscroll {
+    color: royalblue;
+}
+
+button.onscroll:after,
+span.onscroll:after {
+    background: radial-gradient(circle, royalblue 10%, transparent 10%);
+}
+
+header .intro {
+    position: relative;
+    z-index: -1;
+}
+
+header #my-picture-slide {
+    position: absolute;
+}
+
+#my-picture-slide .item {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+
+}
+
+/* header intro section */
+header .intro-content {
+    position: relative;
+    z-index: 10;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    /* background: linear-gradient(to right, rgba(105, 90, 205, 0.5), rgba(0, 191, 255, 0.2)); */
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.navbar a:after {
+    display: none;
+}
+
+
+.text-slide {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    height: 3.6rem;
+}
+
+.text-slide .slide {
+    border-bottom: 2px solid white;
+}
+
+.navbar a.onscroll:before {
+    background: royalblue;
+}
+
+/* social links */
+#social-links {
+    z-index: 100;
+    position: fixed;
+    padding: .5rem;
+    background: rgba(255, 255, 255, 0);
+    left: 0;
+    top: 35%;
+    border-radius: 0rem 1rem 1rem 0rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+#social-links a {
+    font-size: 1.2rem;
+    margin: .2rem;
+    cursor: pointer;
+}
+
+#social-links a:nth-child(1) {
+    color: rgba(0, 110, 255, 0.5);
+}
+
+#social-links a:nth-child(2) {
+    color: lightgreen;
+}
+
+#social-links a:nth-child(3) {
+    color: rgba(0, 153, 255, 0.5);
+}
+
+#social-links a:nth-child(4) {
+    color: rgba(255, 0, 0, 0.562);
+}
+
+#social-links a:nth-child(5) {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#social-links a:nth-child(6) {
+    color: rgba(0, 119, 255, 0.562);
+}
+
+/* main section */
+main section {}
+
+/* about section  */
+section#about {
+    margin: 3rem 0;
+}
+
+/* about info and aboutme */
+section #info,
+section #aboutme {
+    margin: 2rem 2.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: max-content;
+    background: whitesmoke;
+    border-radius: .5rem;
+    flex: 40%;
+    border-top: 2px solid rgba(105, 90, 205, 0.493);
+
+}
+
+#info .img {
+    top: -4.5rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#info img {
+    height: 8rem;
+    width: 8rem;
+    border: 10px solid white;
+    border-radius: 50%;
+}
+
+#info .content {
+    padding: 1.5rem .5rem;
+    align-self: center;
+}
+
+#info .content p {
+    padding: .5rem;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+#info .content i {
+    color: royalblue;
+}
+
+#about .row {
+    display: flex;
+    margin-top: 1rem;
+}
+
+#about #aboutme {
+    font-family: monospace;
+    font-size: 1.2rem;
+    padding: 1rem;
+    background: white;
+    flex: 60%;
+
+}
+
+#aboutme .content {
+    padding: 1rem;
+    text-align: left;
+}
+
+#about .title {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: -1.5rem;
+    padding: 0rem;
+    width: 90%;
+}
+
+#about .title h4 {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: .8rem;
+    border-radius: 2rem;
+    border: 2px solid royalblue;
+    background: white;
+}
+
+section #info:hover,
+section #aboutme:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* project section */
+section#projects {
+    margin: 0 3rem;
+}
+
+#my-projects {
+    margin: 3rem 0;
+}
+
+#project .item {
+    margin: 1rem;
+}
+
+/* works and experience section */
+
+#works .items {
+    margin: 2.5rem 1rem;
+}
+
+#works .card {
+    position: relative;
+    margin: 2rem .5rem;
+    border-top: 2px solid rgba(105, 90, 205, 0.356);
+}
+
+#works .card-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#works .card-image i {
+    padding: 1rem;
+    background: whitesmoke;
+    border-radius: 50%;
+    position: absolute;
+    top: -2.5rem;
+    text-align: center;
+    font-size: 3rem;
+    color: gray;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#works .card-body i {
+    color: royalblue;
+}
+
+#works .card-body li {
+    display: flex;
+    padding: .8rem;
+}
+
+#works .card-body p {
+    /* border-bottom: 2px solid rgba(105, 90, 205, 0.5); */
+    margin: 0 .5rem;
+}
+
+/* service section */
+
+#service {
+    margin: 3rem 1rem;
+}
+
+#service .card img {
+    width: 8rem;
+}
+
+#service .card {
+    margin: 3rem 1rem;
+}
+
+#service .card-image {
+    display: flex;
+    justify-content: center;
+}
+
+#service .card-body {
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
+#service .card-body p{
+    padding: 1rem;
+}
+
+#contact form {
+    margin: 3rem 1rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    border-radius: .5rem;
+    transition: .5s;
+}
+
+form p {
+    padding: 1rem;
+    color: white;
+    background: royalblue;
+    text-align: center;
+}
+
+#contact .input {
+    position: relative;
+    padding: 1rem .8rem;
+}
+
+#contact input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid royalblue;
+    font-family: monospace;
+    padding: .5rem;
+}
+
+input:hover {
+    outline: none;
+}
+
+.input .placeholder {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.507);
+    width: max-content;
+    height: max-content;
+    font-size: .9rem;
+    transition: all .5s;
+    bottom: 1.5rem;
+}
+
+form textarea {
+    height: 20rem;
+    border: none;
+    padding: .5rem;
+    background: whitesmoke;
+}
+
+form button {
+    background: linear-gradient(to right, rgb(11, 92, 158), rgba(71, 61, 139, 0.658));
+    color: white;
+    padding: 1rem;
+}
+
+.msg {
+    transition: .3s;
+}
+
+.alert-danger {
+    padding: 1rem;
+    color: white;
+    background: rgba(255, 0, 0, 0.5);
+    font-family: monospace;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.alert-success {
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    background: rgba(45, 194, 26, 0.5);
+    font-family: monospace;
+    font-weight: bolder;
+}
+
+footer {
+    padding: 1rem;
+    background: royalblue;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* pre loader spin */
+.preloader {
+    position: fixed;
+    background: white;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    transition: 1s;
+}
+
+.loader {
+    height: 5rem;
+    width: 5rem;
+    border: 5px solid whitesmoke;
+    margin: auto;
+    border-radius: 50%;
+    border-top: 5px solid royalblue;
+    animation: 1s infinite linear load;
+}
+
+/* loader animatio */
+@keyframes load {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* scroll top button */
+.scroll-top {
+    position: fixed;
+    bottom: 15px;
+    z-index: 10;
+    right: 15px;
+    transform: scale(0);
+    transition: 1s;
+}
+
+.scroll-top button {
+    border-radius: 50%;
+    background: whitesmoke;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: royalblue;
+}
+
+/* modal styles */
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 100;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+}
+
+.modal-content {
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    padding: 1rem 5rem;
+    color: white;
+    background: linear-gradient(to left, royalblue, lightblue);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body a {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.modal-body a:nth-child(1) {
+    color: green;
+}
+
+.modal-body a:nth-child(2) {
+    color: rgba(255, 68, 0, 0.829);
+}
+
+.modal-footer {
+    padding: 1rem;
+    background: whitesmoke;
+}
+
+/* hire me section */
+#hireme {
+    transform: translateY(100rem);
+}
+
+/* chat bot */
+.chatbot {
+    position: fixed;
+    bottom: 15px;
+    z-index: 10;
+    left: 1.2rem;
+    /* transform: scale(0); */
+    transition: 1s;
+}
+
+.chatbot .header {
+    background: royalblue;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem;
+    position: relative;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: .2s;
+}
+
+.chatbot .chat-msg {
+    position: absolute;
+    background: whitesmoke;
+    padding: .5rem;
+    border-radius: .2rem;
+    top: .5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    left: 3.8rem;
+    width: max-content;
+}
+
+.chatbot .chat-msg::before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 30%;
+    border: 8px solid white;
+    border-color: transparent whitesmoke transparent transparent;
+}
+
+.messanger {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    top: 0;
+    left: 0;
+    transform: translateY(-100rem);
+    z-index: 10;
+}
+
+
+.messanger .panel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* margin-top: 3rem; */
+}
+
+.messanger .top {
+    /* position: absolute; */
+    padding: .5rem;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.messanger button{
+    background: none;
+    color: rgba(105, 90, 205, 0.8);
+    height: 100%;
+    font-size: 1.5rem;
+    width: max-content;
+}
+
+.messanger .avater{
+    display: flex;
+    justify-content: center;
+}
+
+.messanger *{
+    align-self: center;
+}
+
+.messanger .bottom{
+    position: absolute;
+    bottom: 3rem;
+    padding: .5rem;
+    display: flex;
+    width: 100%;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.messanger .top-left{
+    display: flex;
+    margin-right: auto;
+}
+
+.messanger img {
+    width: 2.5rem;
+    border-radius: 50%;
+    border: 3px solid rgba(105, 90, 205, 0.5);
+    margin: 0 .5rem;
+}
+
+.messanger .bottom input{
+    background: whitesmoke;
+    padding: .6rem;
+    border: none;
+    border-radius: 5rem;
+}
+
+.messanger .center, .msg-panel{
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.messanger .bot-msg{
+    width: max-content;
+    max-width: 15rem;
+    display: inline-flex;
+    position: relative;
+    align-self: initial;
+    margin: .5rem;
+}
+
+.bot-msg img{
+    width: 2rem;
+    align-self: start;
+}
+.msg-panel p{
+    color: white;
+    font-family: monospace;background: rgba(105, 90, 205, 0.5);
+    border-radius: .2rem;
+    padding: .8rem;
+}
+
+.type{
+    margin: .5rem;
+}
+
+.typing{
+    display: inline-flex;
+    background: whitesmoke;
+    padding: .5rem;
+    border-radius: .5rem;
+    /* transform: scale(0); */
+    /* display: none; */
+    align-self: start;
+}
+
+.typing span{
+    width: .5rem;
+    height: .5rem;
+    background: rgba(105, 90, 205, 0.5);
+    margin: .15rem;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.typing span:nth-child(1){
+    animation: blink .5s infinite;
+}
+
+.typing span:nth-child(2){
+    animation: blink1 1s infinite;
+}
+
+.typing span:nth-child(3){
+    animation: blink2 1.5s infinite;
+}
+
+@keyframes blink{
+    to{
+        opacity: .5;
+    }   
+}
+@keyframes blink1{
+    to{
+        opacity: .5;
+    }
+}
+@keyframes blink2{
+    to{
+        opacity: .5;
+    }
+}
+
+.user-msg{
+    display: flex;
+    align-self: initial;
+    justify-content: flex-end;
+}
+
+.user-msg .msg{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-msg p{
+    margin: .3rem;
+}
+
+.messanger .logo{
+    padding: 1rem 1rem;
+    background: royalblue;
+    color: white;
+    text-align: center;
+}
+
+.messanger .bottom .left{
+    display: flex;
+    width: 6rem;
+    overflow: hidden;
+}
+
+.msg-panel{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+}
+
+.bottom input{
+    width: 100%;
+}

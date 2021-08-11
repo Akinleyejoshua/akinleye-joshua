@@ -1,0 +1,133 @@
+/* Mobile/Tab styles */
+main #about {
+    overflow-x: auto;
+}
+
+nav .navbar{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background:whitesmoke;
+    right: -100rem;
+    transition: 1s ease-in-out;
+    overflow: auto;
+}
+
+.navbar .close-btn{
+    font-size: 2rem;
+    color: rgba(255, 0, 0, 0.6);
+    /* padding: 1rem; */
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1), -5px -5px 10px white;
+    margin: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.navbar ul{
+    width: 100%;
+}
+
+.navbar li{
+    padding: 1rem;
+    text-align: center;
+    margin:  1.5rem 5rem;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1), -5px -5px 10px white;
+    border-radius: 5rem;
+}
+
+.navbar li:hover{
+    box-shadow: inset 2px 3px 5px rgba(0, 0, 0, 0.1), inset -5px -5px 10px white;
+}
+
+.navbar i{
+    font-size: .8rem;
+}
+
+.navbar a{
+    color: royalblue;
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
+.navbar li:not(:last-child){
+    border-bottom: 1px solid rgba(245, 245, 245, 0.2);
+}
+
+
+#my-picture-slide .item {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+/* main section #aboutme{
+    margin-top: 5rem;
+} */
+
+main .row{
+    flex-direction: column;
+}
+
+section #info, section #aboutme{
+    border-top: 2px solid royalblue;
+
+}
+#works .card{
+    border-top: 2px solid royalblue;
+}
+
+#works .card-image i{
+    border: 2px solid royalblue;
+
+}
+
+/* contact section */
+#contact form:hover{
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+
+}
+
+main .msg-panel{
+    height: 74%;
+}
+
+main section #info{
+    border-top: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+main #works .card{
+    border: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+main #works .card-image i{
+    border: none;
+}
+
+main #contact{
+    box-shadow: 0 0 0;
+}
+
+#contact .input{
+    margin: .5rem;
+}
+
+#contact textarea{
+    margin: 1rem;
+}
+
+#contact button{
+    width: max-content;
+    margin: 1rem;
+    padding: 1rem 3rem;
+    border-radius: 3rem;    
+}
